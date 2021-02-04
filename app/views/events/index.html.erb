@@ -2,16 +2,7 @@
 <div id="inputScheduleForm" class="modal-dialog" role="document"></div>
 <br>
 <script>
-//本日、カレンダーの開始日、終了日と、曜日のテキストを用意します
-var date_now = new Date();
-var date_start = new Date(date_now.getFullYear(), date_now.getMonth(), 1);
-var date_end = new Date(date_now.getFullYear(), date_now.getMonth(), 1);
-var days = ["日", "月", "火", "水", "木", "金", "土"];
-date_end.setMonth(date_end.getMonth()+12);
-
 document.addEventListener("DOMContentLoaded", function() {
- 
-  //FullCalendarを生成します
   var calendar = fullCalendar();
   calendar.render();
 });

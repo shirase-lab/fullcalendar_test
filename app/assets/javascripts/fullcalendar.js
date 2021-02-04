@@ -1,5 +1,11 @@
 var g_calendar = null;
 
+//本日、カレンダーの開始日、終了日と、曜日のテキストを用意します
+var date_now = new Date();
+var date_start = new Date(date_now.getFullYear(), date_now.getMonth(), 1);
+var date_end = new Date(date_now.getFullYear(), date_now.getMonth(), 1);
+date_end.setMonth(date_end.getMonth()+12);
+
 function createCalendar()
 {
     return new FullCalendar.Calendar(document.getElementById("calendar"), {
@@ -20,7 +26,7 @@ function createCalendar()
         },
 
         // デフォルト日を本日に設定します
-        defaultDate: date_now,
+        defaultDate: new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000)),
         timeZone: 'JST',
 
         // 有効期間を当月1日から12ヶ月後（1年後）に設定します。
